@@ -1,5 +1,7 @@
 # isee
 
+## Intentionally Synchronous Execution Experiment
+
 ## Project setup
 ```
 npm install
