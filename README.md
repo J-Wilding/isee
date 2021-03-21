@@ -1,5 +1,7 @@
 # Intentionally Synchronous Execution Experiment (isee)
 
+[Check it out](https://isee.jonathanwilding.com)
+
 This site is designed to test whether intentional multi-tasking has improved performance/more retention compared with spontaneous multi-tasking. 
 
 ## Experiment Design
