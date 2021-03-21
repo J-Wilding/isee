@@ -1,26 +1,7 @@
-# isee
+# Intentionally Synchronous Execution Experiment (isee)
 
-## Intentionally Synchronous Execution Experiment
+This site is designed to test whether intentional multi-tasking has improved performance/more retention compared with spontaneous multi-tasking. 
 
-## Project setup
-```
-npm install
-```
+## Experiment Design
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+This test is to work in conjunction with Weinan's site which provides a base spontaneous multi-tasking data, i.e. examines the effect of retention and performance given interruptions. Participants will then be directed to this site to collect data given similar tasks with equal weight, with the goal of performing both at the same time to the best of their ability.
