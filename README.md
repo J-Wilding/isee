@@ -1,4 +1,4 @@
-# Intentionally Synchronous Execution Experiment (isee)
+# Intentional Synchronous Division of Attention Study (ISDAS)
 
 [Check it out](https://isee.jonathanwilding.com)
 

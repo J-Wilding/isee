@@ -1,33 +1,44 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import Vue from "vue";
+import App from "./App.vue";
+import router from "./router";
+import "./index.css";
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
-let data = {
-  netid: 'jrw265',
+const data = {
+  netid: "jrw265",
+  currentID: 2,
   dataEntered: [
     {
       id: 1,
-      probl: "This app is not completely written yet.",
-      name: "Emma"
-    }
+      first_name: "Judye",
+      last_name: "Albutt",
+      email: "jalbutt0@slashdot.org",
+      gender: "Male",
+      address: "427 Raven Parkway",
+      city: "Seattle",
+      state: "Washington",
+    },
   ],
   getDataEntered() {
     return this.dataEntered;
   },
-  addData(name, problem) {
-    this.tickets.push({
-      id: this.currentID,
-      problem: problem,
-      name: name
+  addData(first, last, email, gender, address, city, state) {
+    this.dataEntered.push({
+      first_name: first,
+      last_name: last,
+      email: email,
+      gender: gender,
+      address: address,
+      city: city,
+      state: state,
     });
     this.currentID += 1;
-  }
+  },
 };
 
 new Vue({
   router,
   data: data,
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");
