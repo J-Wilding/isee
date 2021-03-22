@@ -1,6 +1,6 @@
 # Intentional Synchronous Division of Attention Study (ISDAS)
 
-[Check it out](https://isee.jonathanwilding.com)
+[Check it out](https://isdas.jonathanwilding.com)
 
 This site is designed to test whether intentional multi-tasking has improved performance/more retention compared with spontaneous multi-tasking. 
 

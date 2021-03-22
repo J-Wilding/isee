@@ -7,7 +7,10 @@ module.exports = {
     extend: {},
   },
   variants: {
-    extend: {},
+    extend: {
+      translate: ['active'],
+      scale: ['active'],
+    },
   },
   plugins: [],
 }

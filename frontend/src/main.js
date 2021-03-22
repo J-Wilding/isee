@@ -6,18 +6,18 @@ import "./index.css";
 Vue.config.productionTip = false;
 
 const data = {
-  netid: "jrw265",
-  currentID: 2,
+  netid: "",
+  currentID: 1,
   dataEntered: [
     {
-      id: 1,
-      first_name: "Judye",
-      last_name: "Albutt",
-      email: "jalbutt0@slashdot.org",
-      gender: "Male",
-      address: "427 Raven Parkway",
-      city: "Seattle",
-      state: "Washington",
+      id: 0,
+      first_name: "",
+      last_name: "",
+      email: "",
+      gender: "",
+      address: "",
+      city: "",
+      state: "",
     },
   ],
   getDataEntered() {

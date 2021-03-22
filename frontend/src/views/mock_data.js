@@ -10000,3 +10000,5 @@ const mock = [
     state: "New York",
   },
 ];
+
+export default mock;
