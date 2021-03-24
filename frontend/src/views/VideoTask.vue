@@ -1,9 +1,12 @@
 <template>
-  <div>
+  <div class="p-2 mx-2 rounded-md shadow-lg bg-gray-200">
     <Timer time="420" />
-    <div id="content" class="flex items-center bg-gray-300">
-      <DataEntry class="w-1/2"/>
-      <Video class="w-1/2 px-6" />
+    <div
+      id="content"
+      class="flex flex-col-reverse md:flex-row py-2 items-center"
+    >
+      <DataEntry class="w-full md:w-7/12" />
+      <Video class="w-full md:w-5/12 px-6" />
     </div>
     <DataEntered />
   </div>

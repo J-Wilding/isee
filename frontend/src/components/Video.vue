@@ -1,7 +1,7 @@
 <template>
   <iframe
     width="560"
-    height="315"
+    height="430"
     src="https://www.youtube.com/embed/IHZwWFHWa-w"
     title="YouTube video player"
     frameborder="0"
