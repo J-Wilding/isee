@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import StartPage from "../views/StartPage.vue";
-import VideoTask from "../views/About.vue";
+import VideoTask from "../views/VideoTask.vue";
 
 Vue.use(VueRouter);
 

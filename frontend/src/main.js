@@ -2,11 +2,13 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import "./index.css";
+import mock from "./mock_data";
 
 Vue.config.productionTip = false;
 
 const data = {
   netid: "",
+  employeeInfo: mock,
   currentID: 1,
   dataEntered: [
     {
@@ -15,6 +17,7 @@ const data = {
       last_name: "",
       email: "",
       gender: "",
+      job: "",
       address: "",
       city: "",
       state: "",
@@ -23,12 +26,13 @@ const data = {
   getDataEntered() {
     return this.dataEntered;
   },
-  addData(first, last, email, gender, address, city, state) {
+  addData(first, last, email, gender, job, address, city, state) {
     this.dataEntered.push({
       first_name: first,
       last_name: last,
       email: email,
       gender: gender,
+      job: job,
       address: address,
       city: city,
       state: state,
