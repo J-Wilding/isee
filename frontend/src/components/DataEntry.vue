@@ -3,9 +3,9 @@
     <InfoCard :employee="currentEmployee" />
     <!-- <form > -->
     <div
-      class="form flex flex-col w-1/2 text-left mx-auto bg-blue-200 rounded-md shadow-lg"
+      class="form  text-right mx-auto bg-blue-200 rounded-md shadow-lg"
     >
-      <div class="inputWrapper">
+      <div class="row">
         <label for="name">Name: </label>
         <input
           class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-1"
@@ -13,8 +13,6 @@
           type="text"
           v-model="name"
         />
-      </div>
-      <div class="inputWrapper">
         <label for="department">Department: </label>
         <input
           class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-1"
@@ -23,7 +21,7 @@
           v-model="department"
         />
       </div>
-      <div class="inputWrapper">
+      <div class="row">
         <label for="job">Job: </label>
         <input
           class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-1"
@@ -31,8 +29,6 @@
           type="text"
           v-model="job"
         />
-      </div>
-      <div class="inputWrapper">
         <label for="email">Email: </label>
         <input
           class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-1"
@@ -41,7 +37,7 @@
           v-model="email"
         />
       </div>
-      <div class="inputWrapper">
+      <div class="row">
         <label for="address">Address: </label>
         <input
           class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-1"
@@ -49,8 +45,7 @@
           type="text"
           v-model="address"
         />
-      </div>
-      <div class="inputWrapper">
+
         <label for="city">City: </label>
         <input
           class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-1"
@@ -59,7 +54,7 @@
           v-model="city"
         />
       </div>
-      <div class="inputWrapper">
+      <div class="row">
         <label for="state">State: </label>
         <input
           class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-1"
@@ -67,8 +62,7 @@
           type="text"
           v-model="state"
         />
-      </div>
-      <div class="inputWrapper">
+
         <label for="zip_code">Zip Code: </label>
         <input
           class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-1"
@@ -77,7 +71,7 @@
           v-model="zip_code"
         />
       </div>
-      <div class="inputWrapper">
+      <div class="row">
         <label for="ssn">SSN: </label>
         <input
           class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-1"
@@ -102,7 +96,7 @@
   display: table;
   border-spacing: 1rem;
 }
-.inputWrapper {
+.row {
   display: table-row;
 }
 label {
@@ -124,16 +118,16 @@ export default {
   },
   data: function () {
     return {
+      id: "",
       name: "",
-      address: "",
-      city: "",
+      job: "",
       department: "",
       email: "",
-      id: "",
-      job: "",
-      ssn: "",
+      address: "",
+      city: "",
       state: "",
       zip_code: "",
+      ssn: "",
     };
   },
   computed: {
@@ -143,10 +137,20 @@ export default {
   },
   methods: {
     getNext() {
-      let fname,
-        lname = this.name.split(" ");
-      this.$root.$data.addData(fname, lname);
+      this.id = this.$root.$data.currentID;
+      let [fname, lname] = this.name.trim().split(" ");
+      // console.log(fname, "middle",lname)
+      this.$root.$data.addDataEntered(fname, lname, this.email, this.job, this.department, this.address, this.city, this.state, this.zip_code, this.ssn);
       this.name = "";
+      this.address = "";
+      this.city = "";
+      this.department = "";
+      this.email = "";
+      this.id = "";
+      this.job = "";
+      this.ssn = "";
+      this.state = "";
+      this.zip_code = "";
       return this.$root.$data.currentID++;
     },
   },

@@ -11,31 +11,41 @@ const data = {
   employeeInfo: mock,
   currentID: 1,
   dataEntered: [
-    {
-      id: 0,
-      first_name: "",
-      last_name: "",
-      email: "",
-      gender: "",
-      job: "",
-      address: "",
-      city: "",
-      state: "",
-    },
+    // {
+    //   id: 0,
+    //   first_name: "",
+    //   last_name: "",
+    //   job: "",
+    //   department: "",
+    //   email: "",
+    //   address: "",
+    //   city: "",
+    //   state: "",
+    //   zip_code: "",
+    //   ssn: "",
+    // },
+  ],
+  imgSearchData: [
+    // {
+    //   imageID: integer,
+    //   participantLabel: Boolean,
+    // },
   ],
   getDataEntered() {
     return this.dataEntered;
   },
-  addData(first, last, email, gender, job, address, city, state) {
+  addDataEntered(first, last, email, job, dept, address, city, state, zip, ssn) {
     this.dataEntered.push({
       first_name: first,
       last_name: last,
-      email: email,
-      gender: gender,
       job: job,
+      department: dept,
+      email: email,
       address: address,
       city: city,
       state: state,
+      zip_code: zip,
+      ssn: ssn,
     });
     this.currentID += 1;
   },
