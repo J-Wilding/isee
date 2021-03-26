@@ -3,7 +3,6 @@
     <div id="wrapper" class="pb-14">
       <div id="nav">
         <router-link to="/">Start Over</router-link> |
-        <router-link to="/about">About</router-link> |
         <router-link to="/video_task">Data Entry with Video</router-link> |
         <router-link to="/image_task">Data Entry with Image Search</router-link>
       </div>

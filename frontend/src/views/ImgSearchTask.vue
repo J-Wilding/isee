@@ -17,7 +17,6 @@
 import Timer from "@/components/Timer.vue";
 import DataEntry from "@/components/DataEntry.vue";
 import ImageSearch from "@/components/ImageSearch.vue";
-import DataEntered from "@/components/DataEntered.vue";
 
 export default {
   name: "ImageTask",
@@ -25,7 +24,6 @@ export default {
     Timer,
     DataEntry,
     ImageSearch,
-    DataEntered,
   },
 };
 </script>

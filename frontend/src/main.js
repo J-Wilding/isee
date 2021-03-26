@@ -28,13 +28,24 @@ const data = {
   imgSearchData: [
     // {
     //   imageID: integer,
-    //   participantLabel: Boolean,
+    //   hasContraband: Boolean,
     // },
   ],
   getDataEntered() {
     return this.dataEntered;
   },
-  addDataEntered(first, last, email, job, dept, address, city, state, zip, ssn) {
+  addDataEntered(
+    first,
+    last,
+    email,
+    job,
+    dept,
+    address,
+    city,
+    state,
+    zip,
+    ssn
+  ) {
     this.dataEntered.push({
       first_name: first,
       last_name: last,
@@ -48,6 +59,15 @@ const data = {
       ssn: ssn,
     });
     this.currentID += 1;
+  },
+  getImgSearchData() {
+    return this.imgSearchData;
+  },
+  addImgSearchData(imageID, participantLabel) {
+    this.imgSearchData.push({
+      imageID: imageID,
+      hasContraband: participantLabel, // Participant label
+    });
   },
 };
 

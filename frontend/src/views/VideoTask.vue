@@ -17,7 +17,6 @@
 import Timer from "@/components/Timer.vue";
 import DataEntry from "@/components/DataEntry.vue";
 import Video from "@/components/Video.vue";
-import DataEntered from "@/components/DataEntered.vue";
 
 export default {
   name: "VideoTask",
@@ -25,7 +24,6 @@ export default {
     Timer,
     DataEntry,
     Video,
-    DataEntered,
   },
 };
 </script>
