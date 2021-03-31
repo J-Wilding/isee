@@ -31,8 +31,5 @@ export default {
   props: {
     employee: Object,
   },
-  created() {
-    console.log(this.employee);
-  },
 };
 </script>

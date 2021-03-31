@@ -2,9 +2,7 @@
   <div class="flex flex-col">
     <InfoCard :employee="currentEmployee" />
     <!-- <form > -->
-    <div
-      class="form  text-right mx-auto bg-blue-200 rounded-md shadow-lg"
-    >
+    <div class="form text-right mx-auto bg-blue-200 rounded-md shadow-lg">
       <div class="row">
         <label for="name">Name: </label>
         <input
@@ -116,7 +114,7 @@ export default {
   components: {
     InfoCard,
   },
-  data: function () {
+  data() {
     return {
       id: "",
       name: "",
@@ -137,10 +135,37 @@ export default {
   },
   methods: {
     getNext() {
+      const dataIDs = [
+        "name",
+        "job",
+        "department",
+        "email",
+        "address",
+        "city",
+        "state",
+        "zip_code",
+        "ssn",
+      ];
+      for (const key of dataIDs) {
+        if (this[key] === null || this[key] === "") {
+          return;
+        }
+      }
       this.id = this.$root.$data.currentID;
       let [fname, lname] = this.name.trim().split(" ");
       // console.log(fname, "middle",lname)
-      this.$root.$data.addDataEntered(fname, lname, this.email, this.job, this.department, this.address, this.city, this.state, this.zip_code, this.ssn);
+      this.$root.$data.addDataEntered(
+        fname,
+        lname,
+        this.email,
+        this.job,
+        this.department,
+        this.address,
+        this.city,
+        this.state,
+        this.zip_code,
+        this.ssn
+      );
       this.name = "";
       this.address = "";
       this.city = "";
@@ -151,7 +176,6 @@ export default {
       this.ssn = "";
       this.state = "";
       this.zip_code = "";
-      return this.$root.$data.currentID++;
     },
   },
 };

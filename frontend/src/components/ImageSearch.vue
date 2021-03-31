@@ -1,7 +1,11 @@
 <template>
-  <div class="felx flex-col m-2  bg-blue-200 shadow-lg rounded-md">
+  <div class="felx flex-col m-2 bg-blue-200 shadow-lg rounded-md">
     <div class="flex items-center justify-center">
-      <img src="@/assets/images/TSA_bw/File 12.jpg" alt="" class="w-full rounded-t-md" />
+      <img
+        src="@/assets/images/TSA_bw/File 12.jpg"
+        alt=""
+        class="h-3/4 rounded-t-md"
+      />
     </div>
     <div class="bg-blue-300 rounded-b-md">
       <button
