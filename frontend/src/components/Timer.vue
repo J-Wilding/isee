@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  props: { time: Number, pushTo: String },
+  props: ["time", "pushTo", "taskId"],
   data() {
     return {
       timerCount: this.time,
@@ -20,7 +20,7 @@ export default {
             this.timerCount--;
           }, 1000);
         } else {
-          this.$router.push(this.pushTo);
+          this.$router.push(`/survey/${this.taskId}${this.pushTo}`);
         }
       },
       immediate: true, // This ensures the watcher is triggered upon creation
