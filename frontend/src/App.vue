@@ -1,10 +1,20 @@
 <template>
   <div id="app">
     <div id="wrapper" class="pb-14">
-      <div id="nav">
-        <router-link to="/">Start Over</router-link> |
-        <router-link to="/video_task">Data Entry with Video</router-link> |
-        <router-link to="/image_task">Data Entry with Image Search</router-link>
+      <div class="flex justify-between items-center">
+        <div id="nav">
+          <router-link to="/">Start Over</router-link> |
+          <router-link to="/prep_data">Intro Data Entry</router-link> |
+          <router-link to="/prep_Video">Intro Video Attention</router-link> |
+          <router-link to="/prep_image_search">Intro Image Search</router-link>
+          | <router-link to="/video_task">Data Entry with Video</router-link> |
+          <router-link to="/image_task"
+            >Data Entry with Image Search</router-link
+          >
+          |
+          <router-link to="/exit">Exit Page</router-link>
+        </div>
+        <router-link to="/Admin" class="text-red-800 p-2 mr-4 font-bold">Admin</router-link>
       </div>
       <router-view />
     </div>

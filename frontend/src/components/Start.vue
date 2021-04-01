@@ -47,7 +47,7 @@ export default {
     start() {
       if (this.netid !== "") {
         this.$root.$data.netid = this.netid;
-        this.$router.push("/video_task");
+        this.$router.push("/prep_data");
       }
     },
   },

@@ -1,6 +1,6 @@
 <template>
   <div class="w-screen">
-    Task ID: {{ $route.params.taskId }} | {{ $route.params.nextRoute }}
+    Task ID: {{ $route.params.taskName }} | {{ $route.params.nextRoute }}
     <form class="w-3/4 md:w-6/12 flex flex-col mx-auto">
       <div
         v-for="(question, index) in questions"
@@ -47,9 +47,9 @@ export default {
   methods: {
     async getQuestions() {
       try {
-        console.log(this.taskId);
+        console.log(this.taskName);
         const response = await axios.get(
-          `/api/survey/${this.taskId}/questions`
+          `/api/task/${this.taskName}/questions`
         );
         this.questions = response.data;
       } catch (error) {

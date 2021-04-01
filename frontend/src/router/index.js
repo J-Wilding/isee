@@ -5,15 +5,33 @@ import VideoTask from "../views/VideoTask.vue";
 import ImageTask from "../views/ImgSearchTask.vue";
 import Survey from "../views/Survey.vue";
 import Admin from "../views/Admin.vue";
-import About from "../views/About.vue";
+import Exit from "../views/Exit.vue";
+import PrepData from "../views/PrepData.vue";
+import PrepVideo from "../views/PrepVideo.vue";
+import PrepImageSearch from "../views/PrepImageSearch.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/",
-    name: "Start Page",
+    name: "StartPage",
     component: StartPage,
+  },
+  {
+    path: "/prep_data",
+    name: "PrepData",
+    component: PrepData,
+  },
+  {
+    path: "/prep_video",
+    name: "PrepVideo",
+    component: PrepVideo,
+  },
+  {
+    path: "/prep_image_search",
+    name: "PrepImageSearch",
+    component: PrepImageSearch,
   },
   {
     path: "/video_task",
@@ -26,7 +44,7 @@ const routes = [
     component: ImageTask,
   },
   {
-    path: "/survey/:taskId/:nextRoute",
+    path: "/survey/:taskName/:nextRoute",
     name: "Survey",
     component: Survey,
   },
@@ -36,9 +54,9 @@ const routes = [
     component: Admin,
   },
   {
-    path: "/about",
-    name: "About",
-    component: About,
+    path: "/exit",
+    name: "exit",
+    component: Exit,
   },
 ];
 

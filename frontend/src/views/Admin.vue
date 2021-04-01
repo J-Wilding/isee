@@ -1,13 +1,13 @@
 <template>
-  <div class="bg-gray-100 m-4">
-    <div class="bg-blue-200 rounded m-2 p-4 md:w-3/4 lg:1/2 mx-auto">
+  <div class="bg-gray-100 m-4 p-10 rounded-md shadow-lg">
+    <div class="bg-blue-200 rounded shadow-inner m-2 p-4 md:w-3/4 lg:1/2 mx-auto">
       <h1>Task Manager</h1>
       <h2>Add a Task</h2>
       <div>
-        <input type="text" v-model="task" />
+        <input type="text" v-model="task" class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-1" />
         <button
           @click.prevent="addTask()"
-          class="m-4 p-2 bg-blue-500 text-white rounded-3xl"
+          class="m-4 p-2 bg-blue-500 focus:outline-none transition duration-150 ease-in-out transform active:-translate-y-1 active:scale-95 shadow-lg text-white rounded-3xl"
         >
           Add Research Task
         </button>
@@ -25,7 +25,7 @@
           <td class="text-center">
             <button
               @click="editTask(task)"
-              class="text-green-800 px-2 m-2 bg-green-100 rounded-xl"
+              class="text-green-800 focus:outline-none transition duration-150 ease-in-out transform active:-translate-y-1 active:scale-95 shadow-lg px-2 m-2 bg-green-100 rounded-xl"
             >
               &#x2710;
             </button>
@@ -33,7 +33,7 @@
           <td class="text-center">
             <button
               @click="deleteTask(task)"
-              class="text-red-800 px-2 m-2 bg-red-100 rounded-xl"
+              class="text-red-800 focus:outline-none transition duration-150 ease-in-out transform active:-translate-y-1 active:scale-95 shadow-lg px-2 m-2 bg-red-100 rounded-xl"
             >
               &#x2718;
             </button>
@@ -42,18 +42,53 @@
       </table>
     </div>
     <br />
-    <!-- <div>
+    <hr />
+    <br />
+    <div>
       <h1>Survey Manager</h1>
-      <div id="surveys">
-        <button
-          v-for="survey in surveys"
-          :key="survey.id"
-          @click="selectSurvey(survey)"
-        >
-          {{ survey.name }}
-        </button>
+      <div id="surveys" class="flex flex-col justify-center items-center">
+        <div>
+          <button
+            class="p-2 px-3 m-4 focus:outline-none rounded-3xl text-white bg-blue-500 transition duration-150 ease-in-out transform active:-translate-y-1 active:scale-95 shadow-lg"
+            v-for="task in tasks"
+            :key="task.id"
+            @click="selectSurvey(task)"
+          >
+            {{ task.name }}
+          </button>
+        </div>
+        <form @submit.prevent="addQuestion" class="flex flex-col w-7/12 bg-blue-200 shadow-inner rounded-md">
+          <div class="p-4 flex justify-between">
+            <div class="p-2">
+              <label for="question">Question: </label>
+              <input
+                type="text"
+                class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-1"
+                id="question"
+                v-model="question"
+              />
+            </div>
+            <div class="p-2">
+              <label for="tag" >Tag: </label>
+              <input
+                type="text"
+                class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-1"
+                id="tag"
+                v-model="tag"
+              />
+            </div>
+          </div>
+          <div class="flex items-start p-4 w-full">
+            <label for="question" class="p-2">Answers: </label>
+            <textarea
+              class="rounded-lg focus:outline-none focus:ring focus:border-blue-300 shadow-inner p-2 w-full"
+              id="answers"
+              v-model="answers"
+            />
+          </div>
+        </form>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -80,6 +115,7 @@ export default {
     this.getTasks();
   },
   methods: {
+    // Task Methods
     async addTask() {
       try {
         if (this.task === "") {
@@ -119,6 +155,13 @@ export default {
         if (this.task === "") {
           return;
         }
+        if (
+          !confirm(
+            `Do you really want to change: ${task.name} to ${this.task}?`
+          )
+        ) {
+          return;
+        }
         axios.put(`/api/tasks/${task._id}`, {
           name: this.task,
         });
@@ -127,7 +170,14 @@ export default {
         console.log(error);
       }
     },
-
+    // Survey Methods
+    async addSurvey() {
+      try {
+        await axios.post("/api/surveys", {});
+      } catch (error) {
+        console.log(error);
+      }
+    },
     async getSurveys() {
       try {
         const response = await axios.get("/api/surveys");
@@ -136,14 +186,14 @@ export default {
         console.log(error);
       }
     },
-    selectSurvey(survey) {
-      this.survey = survey;
-      this.getItems();
+    selectSurvey(task) {
+      this.survey = task;
+      this.getQuestions();
     },
     async getQuestions() {
       try {
         const response = await axios.get(
-          `/api/surveys/${this.survey.taskId}/questions`
+          `/api/task/${this.survey.name}/questions`
         );
         this.questions = response.data;
       } catch (error) {
