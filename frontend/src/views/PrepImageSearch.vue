@@ -1,7 +1,7 @@
 <template>
   <div>
     <Timer
-      v-bind:time="10"
+      v-bind:time="45"
       pushTo="/video_task"
       taskName="prep_image_search"
       class="p-4"

@@ -11,7 +11,7 @@
         <div v-for="answer in question.answers" :key="answer.id" class="pl-8">
           <input
             type="radio"
-            :name="question.tag"
+            :name="question.id"
             :id="question.id + answer.id"
           />
           <label class="px-2" :for="question.id + answer.id">{{
@@ -58,7 +58,6 @@ export default {
           {
             id: "2584ae1857651d13",
             question: "What is the largest planet in our Solar System?",
-            tag: "planets2",
             answers: [
               { id: "1", option: "Jupiter" },
               { id: "2", option: "Saturn" },
@@ -69,7 +68,6 @@ export default {
           {
             id: "354831",
             question: "What is the next largest planet in our Solar System?",
-            tag: "planets",
             answers: [
               { id: "1", option: "Jupiter" },
               { id: "2", option: "Saturn" },

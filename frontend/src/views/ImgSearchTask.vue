@@ -8,7 +8,7 @@
       <div
         class="flex flex-col w-full md:w-5/12 px-6 items-center justify-center"
       >
-        <Timer v-bind:time="10" pushTo="/exit" :taskId="taskId" class="p-4" />
+        <Timer v-bind:time="45" pushTo="/exit" :taskId="taskId" class="p-4" />
         <ImageSearch />
       </div>
     </div>

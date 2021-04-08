@@ -36,7 +36,6 @@ const questionSchema = new mongoose.Schema({
     ref: "Task",
   },
   question: String,
-  tag: String,
   answers: [answerSchema],
 });
 
@@ -122,7 +121,6 @@ app.post("/api/task/:taskName/questions", async (req, res) => {
     let question = new Question({
       task: task,
       question: req.body.question,
-      tag: req.body.tag,
       answers: req.body.answers,
     });
     await question.save();

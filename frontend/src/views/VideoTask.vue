@@ -2,7 +2,7 @@
   <div class="p-2 mx-2 rounded-md shadow-lg bg-gray-200">
     <div id="content" class="grid grid-cols-9 gap-4 py-2 items-center">
       <Timer
-        v-bind:time="6"
+        v-bind:time="45"
         :taskId="taskId"
         pushTo="/image_task"
         class="p-4 row-end-2 col-start-7 col-end-9 col-span-1"
