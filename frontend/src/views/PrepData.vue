@@ -1,11 +1,6 @@
 <template>
   <div>
-    <Timer
-      v-bind:time="45"
-      pushTo="/prep_video"
-      taskName="prep_data"
-      class="p-4"
-    />
+    <Timer v-bind:time="45" to="prep_video" from="prep_data" class="p-4" />
     <DataEntry class="row-start-2 row-span-8 col-start-1 col-end-6" />
     <Submissions />
   </div>

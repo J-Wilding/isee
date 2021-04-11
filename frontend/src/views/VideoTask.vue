@@ -3,8 +3,8 @@
     <div id="content" class="grid grid-cols-9 gap-4 py-2 items-center">
       <Timer
         v-bind:time="45"
-        :taskId="taskId"
-        pushTo="/image_task"
+        to="data_with_image_search"
+        from="data_with_video"
         class="p-4 row-end-2 col-start-7 col-end-9 col-span-1"
       />
       <DataEntry class="row-start-2 row-span-8 col-start-1 col-end-6" />

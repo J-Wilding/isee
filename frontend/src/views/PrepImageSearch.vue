@@ -2,8 +2,8 @@
   <div>
     <Timer
       v-bind:time="45"
-      pushTo="/video_task"
-      taskName="prep_image_search"
+      to="data_with_video"
+      from="prep_image_search"
       class="p-4"
     />
     <ImageSearch />

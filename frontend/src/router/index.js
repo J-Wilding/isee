@@ -34,17 +34,17 @@ const routes = [
     component: PrepImageSearch,
   },
   {
-    path: "/video_task",
-    name: "Video Task",
+    path: "/data_with_video",
+    name: "DataWVideo",
     component: VideoTask,
   },
   {
-    path: "/image_task",
-    name: "Image Task",
+    path: "/data_with_image_search",
+    name: "DataWImageSearch",
     component: ImageTask,
   },
   {
-    path: "/survey/:taskName/:nextRoute",
+    path: "/survey",
     name: "Survey",
     component: Survey,
   },
