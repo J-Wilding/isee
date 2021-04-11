@@ -6,10 +6,10 @@
 
 <script>
 export default {
-  props: { time: Number, pushTo: String },
+  props: ["time", "to", "from"],
   data() {
     return {
-      timerCount: this.time,
+      timerCount: 6, //this.time,
     };
   },
   watch: {
@@ -20,7 +20,10 @@ export default {
             this.timerCount--;
           }, 1000);
         } else {
-          this.$router.push(this.pushTo);
+          this.$router.push({
+            path: "/survey",
+            query: { from: this.from, to: this.to },
+          });
         }
       },
       immediate: true, // This ensures the watcher is triggered upon creation

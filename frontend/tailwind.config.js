@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       translate: ['active'],
       scale: ['active'],
+      borderWidth: ['hover', 'focus'],
     },
   },
   plugins: [],
