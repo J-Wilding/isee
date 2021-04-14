@@ -13,51 +13,52 @@ import PrepImageSearch from "../views/PrepImageSearch.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: "/",
-    name: "StartPage",
-    component: StartPage,
-  },
-  {
-    path: "/prep_data",
-    name: "PrepData",
-    component: PrepData,
-  },
-  {
-    path: "/prep_video",
-    name: "PrepVideo",
-    component: PrepVideo,
-  },
-  {
-    path: "/prep_image_search",
-    name: "PrepImageSearch",
-    component: PrepImageSearch,
-  },
-  {
-    path: "/data_with_video",
-    name: "DataWVideo",
-    component: VideoTask,
-  },
-  {
-    path: "/data_with_image_search",
-    name: "DataWImageSearch",
-    component: ImageTask,
-  },
+  // {
+  //   path: "/",
+  //   name: "StartPage",
+  //   component: StartPage,
+  // },
+  // {
+  //   path: "/prep_data",
+  //   name: "PrepData",
+  //   component: PrepData,
+  // },
+  // {
+  //   path: "/prep_video",
+  //   name: "PrepVideo",
+  //   component: PrepVideo,
+  // },
+  // {
+  //   path: "/prep_image_search",
+  //   name: "PrepImageSearch",
+  //   component: PrepImageSearch,
+  // },
+  // {
+  //   path: "/data_with_video",
+  //   name: "DataWVideo",
+  //   component: VideoTask,
+  // },
+  // {
+  //   path: "/data_with_image_search",
+  //   name: "DataWImageSearch",
+  //   component: ImageTask,
+  // },
   {
     path: "/survey",
     name: "Survey",
     component: Survey,
   },
   {
-    path: "/admin",
+    // path: "/admin",
+    path: "/",
     name: "Admin",
     component: Admin,
   },
-  {
-    path: "/exit",
-    name: "exit",
-    component: Exit,
-  },
+  // {
+  //   path: "/exit",
+  //   name: "exit",
+  //   component: Exit,
+  // },
 ];
 
 const router = new VueRouter({
