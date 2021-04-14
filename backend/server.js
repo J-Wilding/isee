@@ -203,12 +203,11 @@ app.put("/api/survey/question/:questionId", async (req, res) => {
     }
     question.question = req.body.question;
     question.answers = req.body.answers;
-    await question.save();
-    res.status(200).send(question);
+    await question.save(); res.status(200).send(question);
   } catch (error) {
     console.log(error);
     res.sendStatus(500);
   }
 });
 
-app.listen(3000, () => console.log("Server listening on port 3000!"));
+app.listen(3001, () => console.log("Server listening on port 3001!"));
